@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Astrochimp::Engine => "/astrochimp"
+  mount Astrochimp::Engine => "/"
 end

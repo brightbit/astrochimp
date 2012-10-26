@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    errors:
+      models:
+        signup:
+          attributes:
+            base:
+              mailchimp_api_error: "Mailchimp API Error: %{message}"

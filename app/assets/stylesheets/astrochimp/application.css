@@ -9,5 +9,28 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require astrochimp/bootstrap.min
  *= require_tree .
- */
+*/
+
+body {
+  background: url('bg-noise.png');
+}
+
+/* iPhone app frame */
+.appframe {
+  position: relative;
+  width: 283px;
+  height: 554px;
+  margin-bottom: 30px;
+}
+.appframe.iphone {
+  background: url('iphone4-frame-black.png') left top no-repeat;
+}
+.appframe.iphone img {
+  position: absolute;
+  top: 114px;
+  left: 23px;
+  width: 239px;
+  height: 342px;
+}
