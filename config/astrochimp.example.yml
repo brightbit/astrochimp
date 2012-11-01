@@ -10,7 +10,7 @@ defaults: &defaults
   email_format          : "html"
   email_double_optin    : false # true will require user to confirm their email address
   signup_success_notice : "Thanks! We'll drop you a line when we launch!"
-  splash_layout         : "astrochimp_splash"
+  splash_layout         : "astrochimp"
 
 development:
   <<: *defaults
