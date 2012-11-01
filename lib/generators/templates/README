@@ -1,0 +1,22 @@
+===============================================================================
+
+Your app is now Chimpified!
+
+1. Add the astrochimp_signups table by running:
+
+     rake db:migrate
+
+2. Set your Mailchimp API key and List ID:
+
+     export AC_MAILCHIMP_API_KEY=abcdefg12345
+     export AC_MAILCHIMP_LIST_ID=zyxwvut09876
+
+   Note: you can also set these in astrochimp.yml but ENV variables will take precedence
+
+3. Specify your own configurations in astrochimp.yml (optional)
+
+4. Give the astrochimp.html.erb layout your own style (optional)
+
+5. Modify your routes.rb and mount the chimp somewhere besides '/' (optional)
+
+===============================================================================
