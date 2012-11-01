@@ -2,6 +2,9 @@ require_dependency "astrochimp/application_controller"
 
 module Astrochimp
   class SignupsController < ApplicationController
+    # User's 'astrochimp_splash' layout in THEIR app (that uses this gem)
+    layout "#{Rails.root}/app/views/layouts/#{ENV['AC_SPLASH_LAYOUT'] || 'astrochimp_splash'}"
+
     def index
       @signup = Signup.new
 
