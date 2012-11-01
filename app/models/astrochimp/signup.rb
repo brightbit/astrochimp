@@ -8,6 +8,10 @@ module Astrochimp
     STATUS_SUBSCRIBED = 1
     STATUS_INVITED = 2
 
+    # Relations
+    has_many :referrals, class_name: 'Signup'
+    belongs_to :referrer, class_name: 'Signup', counter_cache: true
+
     # Validations
     validates :email, uniqueness: true, email: true
 
