@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    astrochimp (0.1.0)
+    astrochimp (0.1.1)
       hominid (~> 3.0.5)
       jquery-rails
       rails (~> 3.2.8)

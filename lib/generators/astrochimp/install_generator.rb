@@ -9,6 +9,10 @@ module Astrochimp
         copy_file "../../../config/astrochimp.example.yml", "config/astrochimp.yml"
       end
 
+      def copy_default_layout
+        copy_file "../../templates/astrochimp.html.erb", "app/views/layouts/astrochimp.html.erb"
+      end
+
       def add_astrochimp_routes
         route 'mount Astrochimp::Engine => "/"'
       end

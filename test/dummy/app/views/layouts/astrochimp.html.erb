@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= ENV['AC_NAME'] %> Beta Signup</title>
+  <%= stylesheet_link_tag "astrochimp/application" %>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css" />
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="span7">
+        <div id="header" class="outside">
+          <h1><a href="/"><%= ENV['AC_NAME'] %></a></h1>
+        </div>
+      </div>
+      <div class="span5">
+        <div id="nav_header_user">
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+      <div class="span4">
+        <div class="appframe iphone">
+          <%= image_tag('astrochimp/Astrochimp-phone-splash.png') %>
+        </div>
+      </div>
+      <div class="span8">
+        <div class="hero-unit">
+
+          <h1>Change The World in 5 Minutes.</h1>
+          <h2>Literally. The Entire World.</h2>
+          <p>Rock the world so hard it turns upside down. Like Australia.</p>
+
+          <hr />
+
+          <%= yield %>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+        <div class="well">
+          <h2>Feature One</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="well">
+          <h2>Feature Two</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="well">
+          <h2>Feature Three</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+      <div class="span6 company">
+        <p><%= ENV['AC_NAME'] %> is a product of <a href="<%= ENV['AC_COMPANY_URL'] %>"><%= ENV['AC_COMPANY'] %></a></p>
+      </div>
+      <div class="span6 credits">
+        <p><a href="http://mailchimp.com">Powered by MailChimp</a></p>
+      </div>
+    </div>
+
+  </div>
+  <!-- JavaScripts -->
+  <% if !ENV['AC_GOOGLE_ANALYTICS_CODE'].blank? -%>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '<%= ENV['AC_GOOGLE_ANALYTICS_CODE'] %>']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <% end %>
+  <%= javascript_include_tag "astrochimp/application" %>
+</body>
+</html>
