@@ -1,6 +1,10 @@
 <h2></h2>
 <p>
-  Your referral_code:
+  Your referral code:
   <a href="<%= url_for(controller: 'signups', action: 'show', id: @signup.referral_code) %>"
     ><%= @signup.referral_code %></a>
 </p>
+<p>Your signup object:</p>
+<pre>
+  <%= @signup.inspect %>
+</pre>
