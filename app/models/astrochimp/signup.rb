@@ -21,8 +21,16 @@ module Astrochimp
     # Include referral_id functionality
     include IdCode
     alias :referral_code :id_code
-    def self.find_by_referral_code(code)
-      find_by_id_code(code)
+
+    # Return the referral code instead of id for urls
+    alias :to_param :referral_code
+
+    def self.find(id_or_code)
+      if id_or_code.is_a? Integer
+        super(id_or_code)
+      else
+        find_by_id_code(id_or_code)
+      end
     end
 
     private

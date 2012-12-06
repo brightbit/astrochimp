@@ -1,15 +1,15 @@
 module IdCode
   module ClassMethods
-    def pad
-      99999
+    def factor
+      99
     end
 
     def id_to_code(id)
-      (id.to_i + pad).to_s(36)
+      (id.to_i * factor).to_s(26).tr('0-9a-p', 'a-z')
     end
 
     def code_to_id(code)
-      code.to_i(36) - pad
+      code.to_s.tr('a-z', '0-9a-p').to_i(26) / factor
     end
 
     def find_by_id_code(code)

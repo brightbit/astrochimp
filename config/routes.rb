@@ -1,5 +1,5 @@
 Astrochimp::Engine.routes.draw do
   root to: "signups#index"
 
-  resource :signups, only: [:index, :create]
+  resources :signups, only: [:index, :create, :show]
 end

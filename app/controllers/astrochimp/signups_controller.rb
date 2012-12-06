@@ -14,6 +14,10 @@ module Astrochimp
       end
     end
 
+    def show
+      @signup = Signup.find(params[:id])
+    end
+
     # POST
     def create
       @signup = Signup.new(params[:signup])
@@ -25,7 +29,9 @@ module Astrochimp
           format.html { render action: :index }
           format.json { render json: @signup.errors, status: :unprocessable_entity }
         else
-          format.html { redirect_to root_url, notice: ENV['AC_SIGNUP_SUCCESS_NOTICE'] }
+          format.html do
+            redirect_to @signup, notice: ENV['AC_SIGNUP_SUCCESS_NOTICE']
+          end
           format.json { render json: @signup, status: :created, location: @signup }
         end
       end
