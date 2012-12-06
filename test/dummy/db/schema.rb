@@ -11,13 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025202343) do
+ActiveRecord::Schema.define(:version => 20121101211218) do
 
   create_table "astrochimp_signups", :force => true do |t|
     t.string   "email"
     t.integer  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "referral_id"
+    t.string   "referral_code"
+    t.integer  "referral_count", :default => 0
   end
+
+  add_index "astrochimp_signups", ["referral_code"], :name => "index_astrochimp_signups_on_referral_code"
+  add_index "astrochimp_signups", ["referral_id"], :name => "index_astrochimp_signups_on_referral_id"
 
 end
