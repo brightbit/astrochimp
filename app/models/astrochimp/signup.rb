@@ -18,6 +18,13 @@ module Astrochimp
     # Callbacks
     before_create :add_email_to_mailchimp
 
+    # Include referral_id functionality
+    include IdCode
+    alias :referral_code :id_code
+    def self.find_by_referral_code(code)
+      find_by_id_code(code)
+    end
+
     private
     def add_email_to_mailchimp
       # Handle any MailChimp errors
