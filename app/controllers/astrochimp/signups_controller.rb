@@ -2,10 +2,10 @@ require_dependency "astrochimp/application_controller"
 
 module Astrochimp
   class SignupsController < ApplicationController
-    before_filter :capture_referral_code, only: [:index]
+    before_filter :capture_referrer_code, only: [:index]
 
-    def capture_referral_code
-      session[:referral_id] = Signup.code_to_id(params[:referral_code]) if params.has_key? :referral_code
+    def capture_referrer_code
+      session[:referrer_id] = Signup.code_to_id(params[:referrer_code]) if params.has_key? :referrer_code
     end
 
     # User's 'astrochimp_splash' layout in THEIR app (that uses this gem)
@@ -26,7 +26,7 @@ module Astrochimp
 
     # POST
     def create
-      @signup = Signup.new(params[:signup].merge(referral_id: session[:referral_id]))
+      @signup = Signup.new(params[:signup].merge(referrer_id: session[:referrer_id]))
       @signup.status = Signup::STATUS_NEW
 
       respond_to do |format|
