@@ -1,8 +1,12 @@
 <h2></h2>
 <p>
-  Your referral code:
-  <a href="<%= url_for(controller: 'signups', action: 'show', id: @signup.referral_code) %>"
-    ><%= @signup.referral_code %></a>
+  Your referral link to invite others:
+  <%= link_to referral_link_path(referral_code: @signup.referral_code, only_path: false),
+              referral_link_path(referral_code: @signup.referral_code) %>
+</p>
+<p>
+  Number of people you have referred:
+  <%= @signup.referral_count %>
 </p>
 <p>Your signup object:</p>
 <pre>

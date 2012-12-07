@@ -1,7 +1,7 @@
 module Astrochimp
   class Signup < ActiveRecord::Base
     # Attributes
-    attr_accessible :email
+    attr_accessible :email, :referral_id
 
     # Constants
     STATUS_NEW = 0
