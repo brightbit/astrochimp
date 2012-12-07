@@ -10,10 +10,13 @@ module IdCode
       26 ** 3 # insure at least four digits
     end
 
+    # Use base 26 here to avoid numeric codes
+    # (We want codes to be clearly distinguishable from ids)
     def id_to_code(id)
       (id.to_i * factor + pad).to_s(26).tr('0-9a-p', 'a-z')
     end
 
+    # exact inverse of id_to_code
     def code_to_id(code)
       (code.to_s.tr('a-z', '0-9a-p').to_i(26) - pad) / factor
     end
