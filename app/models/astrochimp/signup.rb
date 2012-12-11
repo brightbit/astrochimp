@@ -18,7 +18,7 @@ module Astrochimp
     # Callbacks
     before_create :add_email_to_mailchimp
 
-    # Include referral_id functionality
+    # Include referral code functionality
     include IdCode
     alias :referral_code :id_code
 
