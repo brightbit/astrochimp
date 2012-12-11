@@ -1,4 +1,6 @@
 module IdCode
+  extend ActiveSupport::Concern
+
   module ClassMethods
     # Determines spacing between consecutive referral codes
     def factor
@@ -24,10 +26,6 @@ module IdCode
     def find_by_id_code(code)
       find(code_to_id(code))
     end
-  end
-
-  def self.included(base)
-    base.extend(ClassMethods)
   end
 
   def id_code
