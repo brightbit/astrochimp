@@ -3,3 +3,4 @@ source "https://rubygems.org"
 gem "rails"
 gem "pg"
 gem "astrochimp", path: '../..'
+gem 'letter_opener'

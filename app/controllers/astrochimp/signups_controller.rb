@@ -35,6 +35,7 @@ module Astrochimp
           format.html { render action: :index }
           format.json { render json: @signup.errors, status: :unprocessable_entity }
         else
+          SignupMailer.signup_complete(@signup).deliver
           format.html do
             redirect_to @signup, notice: ENV['AC_SIGNUP_SUCCESS_NOTICE']
           end

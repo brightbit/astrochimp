@@ -13,6 +13,8 @@ config.each do |key, value|
   ENV[key] = value.to_s if !value.kind_of?(Hash) && ENV[key].blank?
 end
 
+ActionMailer::Base.default_url_options[:host] ||= ENV['AC_HOST']
+
 #if File.basename($0) != 'rake'
   #unless ActiveRecord::Base.connection.table_exists?('astrochimp_signups')
     #raise "\n\nThe Chimp wants you to run rake db:migrate\n\n"

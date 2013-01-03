@@ -1,0 +1,5 @@
+You have successfully signed up.
+
+Your custom referral link: <%= referral_link_path(referrer_code: @signup.referral_code, only_path: false) %>
+
+To view the status of your referrals, visit <%= signup_path(@signup.referral_code, only_path: false) %>

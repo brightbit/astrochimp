@@ -4,13 +4,16 @@ defaults: &defaults
   company_url           : "http://mailchimp.com"
   twitter_user          : "Brightbit"
   facebook_url          : "http://www.facebook.com/brightbit"
-  google_analytics_code : ""
-  mailchimp_list_id     : ""
-  mailchimp_api_key     : ""
+  google_analytics_code : 
+  mailchimp_list_id     : 
+  mailchimp_api_key     : 
   email_format          : "html"
   email_double_optin    : false # true will require user to confirm their email address
   signup_success_notice : "Thanks! We'll drop you a line when we launch!"
   splash_layout         : "astrochimp"
+  mail_from             : "from@example.com"
+  mail_subject          : "You have successfully signed up for Astrochimp"
+  host                  : "example.com"
 
 development:
   <<: *defaults
