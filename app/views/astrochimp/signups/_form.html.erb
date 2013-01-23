@@ -1,6 +1,4 @@
-<% if ENV['AC_SUBHEADER'] %>
-  <h2><%= ENV['AC_SUBHEADER'] %></h2>
-<% end %>
+<h2><%= ENV['AC_SUBHEADER'] %></h2>
 <%= form_for(@signup) do |f| %>
   <% if @signup.errors.any? %>
     <div class="alert alert-error">

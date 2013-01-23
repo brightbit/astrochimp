@@ -1,14 +1,9 @@
-<h2></h2>
+<h2 class="ac-signup-success-notice"><%= ENV['AC_SIGNUP_SUCCESS_NOTICE'] %></h2>
 <p>
-  Your referral link to invite others:
+  Share this referral link to invite others:
   <%= link_to referral_link_path(referrer_code: @signup.referral_code, only_path: false),
-              referral_link_path(referrer_code: @signup.referral_code) %>
+              referral_link_path(referrer_code: @signup.referral_code), class: "ac-referral-link" %>
 </p>
 <p>
-  Number of people you have referred:
-  <%= @signup.signups_count %>
+  You have referred <span class="ac-referral-count"><%= @signup.signups_count %><span> people.
 </p>
-<p>Your signup object:</p>
-<pre>
-  <%= @signup.inspect %>
-</pre>
