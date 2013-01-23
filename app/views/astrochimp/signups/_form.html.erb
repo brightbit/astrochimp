@@ -1,4 +1,6 @@
-<h2>Get Notified at Launch</h2>
+<% if ENV['SUBHEADER'] %>
+  <h2><%= ENV['SUBHEADER'] %></h2>
+<% end %>
 <%= form_for(@signup) do |f| %>
   <% if @signup.errors.any? %>
     <div class="alert alert-error">
@@ -13,7 +15,7 @@
     <div class="controls">
       <div class="input-append">
         <%= text_field_tag :email, (params[:signup][:email] if params[:signup] or nil), name: 'signup[email]', placeholder: 'Email address', class: 'span4 btn-large' %>
-        <%= submit_tag 'Notify Me &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
+        <%= submit_tag ENV['SUBMIT_TEXT'].html_safe, class: 'btn btn-success btn-large' %>
       </div>
     </div>
   </div>
