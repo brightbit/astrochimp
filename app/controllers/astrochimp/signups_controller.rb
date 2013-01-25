@@ -37,6 +37,7 @@ module Astrochimp
         else
           SignupMailer.signup_complete(@signup).deliver
           format.html do
+            flash[:signup_success] = ENV['AC_SIGNUP_SUCCESS_NOTICE']
             redirect_to @signup, notice: ENV['AC_SIGNUP_SUCCESS_NOTICE']
           end
           format.json { render json: @signup, status: :created, location: @signup }
