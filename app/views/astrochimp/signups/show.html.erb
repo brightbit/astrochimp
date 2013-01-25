@@ -1,4 +1,6 @@
-<h2 class="ac-signup-success-notice"><%= ENV['AC_SIGNUP_SUCCESS_NOTICE'] %></h2>
+<% if flash[:signup_success] %>
+  <h2 class="ac-signup-success-notice"><%= flash[:signup_success] %></h2>
+<% end %>
 <div class="ac-referrals">
   <p>
     Share this referral link to invite others:<br>
